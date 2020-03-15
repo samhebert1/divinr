@@ -1,0 +1,53 @@
+@import '~@angular/material/theming';
+@import '../../theme.scss';
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap');
+
+.button-row {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+  }
+  
+  .fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+.panel {
+    background-color: mat-color($divinr-app-primary, A400);
+    margin: 5px;
+}
+
+.desc-text {
+    font-family: 'Nanum Pen Script', cursive;
+    padding-left: 6px;
+    line-height:  30px; 
+
+}
+
+.ruler-img {
+    width: 30px;
+    height: 30px;
+    padding-left: 10px;
+    padding-top: 10px;
+
+
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.tarot-img {
+    width: 150px;
+    height: 50%;
+}
+
+.tarot-text {
+    padding-left: 10px;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 15px;
+}

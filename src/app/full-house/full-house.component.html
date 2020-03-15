@@ -1,0 +1,36 @@
+<div class="button-row">
+        <button *ngIf="!checked" mat-raised-button color="primary" (click)="startReading()">Pull Cards</button>
+        <span class="fill-remaining-space"></span>
+        <button *ngIf="checked" mat-raised-button color="primary" (click)="clear()">
+          <mat-icon>clear_all</mat-icon>
+          Clear
+        </button>
+    </div>
+
+
+<mat-accordion *ngIf="checked">
+    <mat-expansion-panel *ngFor="let card of newTwelve" class="panel">
+        <mat-expansion-panel-header>
+            <mat-panel-title style="width: 30%;">
+                <h4 style="text-align: center; margin-bottom: 0; float: left;">{{card.house}} </h4>
+                <img class="ruler-img" src="../../assets/zodiac/{{card.houseRuler}}.svg" style="margin-top: 8px;">
+            </mat-panel-title>
+            <mat-panel-description>
+                <p class="desc-text">{{card.houseDesc}}</p>
+
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="content">
+
+            <img class="tarot-img" src="../../assets/tarot/{{card.img}}">
+            <div class="tarot-text">
+                <h3 class="mat-h3">{{ card.tarotName }}</h3>
+                {{ card.description }}
+            </div>
+
+
+
+        </div>
+
+    </mat-expansion-panel>
+</mat-accordion>

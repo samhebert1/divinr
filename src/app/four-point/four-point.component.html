@@ -1,0 +1,56 @@
+<div class="big-box">
+
+  <div class="button-row">
+    <button *ngIf="!checked" mat-raised-button color="primary" (click)="startReading()">Pull Cards</button>
+    <span class="fill-remaining-space"></span>
+    <button *ngIf="checked" mat-raised-button color="primary" (click)="clear()">
+      <mat-icon>clear_all</mat-icon>
+      Clear
+    </button>
+  </div>
+
+  <div *ngIf="checked">
+    <div class="stats-box" *ngIf="isMobile else fullstatsbox">
+      <img *ngFor="let card of newFour" src="../../assets/tarot/{{ card.img }}">
+    </div>
+
+    <ng-template #fullstatsbox>
+      <div class="full-stats-box">
+        <img *ngFor="let card of newFour" src="../../assets/tarot/{{ card.img }}">
+      </div>
+    </ng-template>
+  </div>
+
+  <mat-grid-list [cols]="isMobile ? 1 : 2" rowHeight="421px" gutterSize="15px" *ngIf="checked">
+    <mat-grid-tile *ngFor="let card of newFour">
+      <mat-card class="dashboard-card" color="primary" style="padding: 5px;">
+        <mat-card-header>
+          <mat-card-title class="dashboard-card-title">
+            <h3 class="mat-h3">{{card.title}}</h3>
+          </mat-card-title>
+          <mat-card-subtitle>
+            <h2 class="mat-h2">{{ card?.tarotName }}</h2>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <img src="../../assets/tarot{{card.img}}">
+          <div class="info-box">
+            <h4 class="mat-h4">Description: </h4>
+            {{ card.description }}
+          </div>
+        </mat-card-content>
+        <mat-card-footer *ngIf="card.tarotAstroTitle != '_'" class="zodiac-ticker" style="padding-left: 15px;">
+          <p class="mat-caption"> Card Astrology: {{ card.tarotAstroTitle }} </p>
+        </mat-card-footer>
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+  <!-- @TODO: Implement synchronicity check in some way. -->
+  <!-- <div class="stats-box" *ngIf="isMobile">
+    <p class="mat-h4">Numerologic <br> Synchronicities:</p>
+  </div> -->
+
+  <div class="spacer"></div>
+</div>
