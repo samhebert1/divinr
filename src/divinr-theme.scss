@@ -1,0 +1,95 @@
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Nanum+Pen+Script&display=swap');
+
+// *********** TYPOGRAPHY CONFIG ***********************************
+
+// font-family: 'Major Mono Display', monospace;
+// font-family: 'Nanum Pen Script', cursive;
+
+$divinr-typography: mat-typography-config(
+  $font-family: 'Nanum Pen Script',
+
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+$divinr-headings: mat-typography-config(
+  $font-family: 'Major Mono Display',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+@mixin divinr-headings-typography($divinr-headings, $divinr-typography) {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font {
+      font-family: mat-font-family($divinr-headings);
+      size: mat-font-size($divinr-headings, headline);
+    }
+  }
+  .mat-button, .mat-flat-button, .mat-raised-button, .mat-stroked-button {
+    font {
+      font-family: mat-font-family($divinr-headings);
+      size: mat-font-size($divinr-headings, body-1);
+    }
+  }
+
+  p, small, caption, label {
+    font {
+      font-family: mat-font-family($divinr-typography);
+      size: mat-font-size($divinr-typography, body-1);
+    }
+  }
+
+
+
+}
+
+@include mat-core($divinr-typography);
+
+// Define palettes for theme using Material Design palettes (palette.scss).
+// For each palette, you can optionally specify a default, lighter, and darker hue.
+// Available color palettes: https://material.io/design/color/
+
+$divinr-app-primary: mat-palette($mat-yellow, A200, A100, A400);
+$divinr-app-accent: mat-palette($mat-light-blue, 400, 300, 600);
+$divinr-app-warn: mat-palette($mat-red);
+
+$divinr-app-theme: mat-light-theme($divinr-app-primary, $divinr-app-accent, $divinr-app-warn);
+
+// Default theme
+@include angular-material-theme($divinr-app-theme);
+@include angular-material-typography($divinr-typography);
+@include angular-material-typography($divinr-headings);
+@include divinr-headings-typography($divinr-headings, $divinr-typography);
+
+@mixin card-theme($divinr-app-theme) {
+  $primary: map-get(
+    $map: $divinr-app-theme,
+    $key: primary
+  );
+  $accent: map-get(
+    $map: $divinr-app-theme,
+    $key: accent
+  );
+
+  .dashboard-card {
+    background-color: mat-color($primary);
+    border-color: mat-color($accent);
+  }
+
+  .footer {
+    background-color: mat-color($divinr-app-accent, 400);
+  }
+}
+.big-box {
+  margin: 5%;
+}
+
+p, small, caption, label {
+  font {
+    font-family: mat-font-family($divinr-typography);
+    size: mat-font-size($divinr-typography, body-1);
+  }
+}

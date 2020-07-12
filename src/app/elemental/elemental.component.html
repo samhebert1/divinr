@@ -1,0 +1,114 @@
+<div class="big-box">
+  <div *ngIf="!checked">
+    <div class="button-row">
+    <h1 class="mat-h1">Elemental Reading</h1>
+    <button id="deal-cards-button"  *ngIf="!checked" mat-raised-button color="primary" (click)="startReading()">
+      Pull Cards
+    </button> </div>
+
+
+
+    
+      <p class="">
+        this view lays out four random tarot cards according to a basic four card reflection of the
+        querent's current state. The cards are laid out accordingly:
+      </p>
+      <!-- <span class="fill-remaining-space"></span> -->
+      <!-- <button *ngIf="!checked" mat-raised-button color="primary" (click)="startReading()">
+        Pull Cards
+      </button> -->
+   
+
+    <div class="position-descriptions">
+      <div [class]="isMobile ? 'mobile-position-description' : 'position-description'">
+        <h2 class="mat-h2">Fire | Soul/Psyche | ψυχῇ</h2>
+        <p>
+          The querent's identity, the state of the soul at the queried time. this card position
+          describes the current state of the querent's passion, drive, identity, and sense of self.
+          The underlying meaning of this position (in this app) is what Jesus Christ referred to
+          when he said to love God with all your 'soul' (greek: ψυχῇ || 'psyche').
+        </p>
+      </div>
+      <div [class]="isMobile ? 'mobile-position-description' : 'position-description'">
+        <h2 class="mat-h2">Air | Thoughts | διανοίᾳ</h2>
+        <p>
+          The current state of the querant's thought life. This position is inspired by when Christ
+          said to love God with all your 'mind' (greek: διανοίᾳ || 'dianoia').
+        </p>
+      </div>
+      <div [class]="isMobile ? 'mobile-position-description' : 'position-description'">
+        <h2 class="mat-h2">Water | Heart | καρδίας</h2>
+        <p>
+          the querant's emotions and feelings; The 'heart' or καρδίας. Inspired once again by
+          Christ's aforementioned command.
+        </p>
+      </div>
+      <div [class]="isMobile ? 'mobile-position-description' : 'position-description'">
+        <h2 class="mat-h2">Earth | Physical/Presence | ἰσχύϊ</h2>
+        <p>
+          the querant's current immmediate physical and environmental state. This position describes
+          the current interface between the querant and their material environnment. It describes
+          the state of their impact or force upon the earth, and/or the impact of the world on their
+          strength. It is inspired by Christ when he said to love God with all your 'strength'
+          (greek: ἰσχύϊ || 'ischui' ).
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="button-row">
+
+    <span class="fill-remaining-space"></span>
+    <button *ngIf="checked" mat-raised-button color="primary" (click)="clear()">
+      <mat-icon>clear_all</mat-icon>
+      Clear
+    </button>
+  </div>
+
+  <div *ngIf="checked">
+    <div class="stats-box" *ngIf="isMobile; else fullstatsbox">
+      <img class="divinr-img"*ngFor="let card of newFour" src="../../assets/tarot/{{ card.img }}" />
+    </div>
+
+    <ng-template #fullstatsbox>
+      <div class="full-stats-box">
+        <img class="divinr-img"*ngFor="let card of newFour" src="../../assets/tarot/{{ card.img }}" />
+      </div>
+    </ng-template>
+  </div>
+
+  <mat-grid-list [cols]="isMobile ? 1 : 2" rowHeight="421px" gutterSize="15px" *ngIf="checked">
+    <mat-grid-tile *ngFor="let card of newFour">
+      <mat-card class="dashboard-card" color="primary" style="padding: 5px;">
+        <mat-card-header>
+          <mat-card-title class="dashboard-card-title">
+            <h3 class="mat-h3">{{ card.title }}</h3>
+          </mat-card-title>
+          <mat-card-subtitle>
+            <h2 class="mat-h2">{{ card?.tarotName }}</h2>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <img class="divinr-img"src="../../assets/tarot{{ card.img }}" />
+          <div class="info-box">
+            <h4 class="mat-h4">Description:</h4>
+            {{ card.tarotDesc }}
+          </div>
+        </mat-card-content>
+        <mat-card-footer
+          *ngIf="card.tarotAstroTitle != '_'"
+          class="zodiac-ticker"
+          style="padding-left: 15px;"
+        >
+          <p class="mat-caption">Card Astrology: {{ card.tarotAstroTitle }}</p>
+        </mat-card-footer>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <!-- @TODO: Implement synchronicity check in some way. -->
+  <!-- <div class="stats-box" *ngIf="isMobile">
+      <p class="mat-h4">Numerologic <br> Synchronicities:</p>
+    </div> -->
+
+  <div class="spacer"></div>
+</div>

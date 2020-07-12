@@ -1,0 +1,60 @@
+<div class="big-box">
+  <div *ngIf="!checked">
+    <div class="button-row">
+      <h1 class="mat-h1">Astrological Reading</h1>
+      <button
+        id="deal-cards-button-12"
+        *ngIf="!checked"
+        mat-raised-button
+        color="primary"
+        (click)="startReading()"
+      >
+        Pull Cards
+      </button>
+    </div>
+
+    <p class="">
+      The twelve house spread uses the astrological houses of the zodiac to describe the intricate
+      domains of the querant's current life. This spread displays 12 cards (one for each house). it
+      includes a brief description of the meaning of each house. The card is read in context to the
+      residing house in which it is pulled.
+    </p>
+    <!-- <span class="fill-remaining-space"></span> -->
+    <!-- <button *ngIf="!checked" mat-raised-button color="primary" (click)="startReading()">
+        Pull Cards
+      </button> -->
+  </div>
+</div>
+<div class="button-row">
+
+  <span class="fill-remaining-space"></span>
+  <button *ngIf="checked" mat-raised-button color="primary" (click)="clear()">
+    <mat-icon>clear_all</mat-icon>
+    Clear
+  </button>
+</div>
+
+<mat-accordion *ngIf="checked">
+  <mat-expansion-panel *ngFor="let card of newTwelve" class="panel">
+    <mat-expansion-panel-header>
+      <mat-panel-title style="width: 30%;">
+        <h4 style="text-align: center; margin-bottom: 0; float: left;">{{ card.house }}</h4>
+        <img
+          class="ruler-img"
+          src="../../assets/zodiac/{{ card.houseRuler }}.svg"
+          style="margin-top: 8px;"
+        />
+      </mat-panel-title>
+      <mat-panel-description>
+        <p class="desc-text">{{ card.houseDesc }}</p>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="content">
+      <img class="tarot-img divinr-img" src="../../assets/tarot/{{ card.img }}" />
+      <div class="tarot-text">
+        <h3 class="mat-h3">{{ card.tarotName }}</h3>
+        {{ card.tarotDesc }}
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

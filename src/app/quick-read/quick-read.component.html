@@ -1,0 +1,61 @@
+<div class="big-box">
+    <div class="button-row">
+      <button *ngIf="!checked" mat-raised-button color="primary" (click)="startReading()">
+        Pull Card
+      </button>
+      <span class="fill-remaining-space"></span>
+      <button *ngIf="checked" mat-raised-button color="primary" (click)="clear()">
+        <mat-icon>clear_all</mat-icon>
+        Clear
+      </button>
+    </div>
+  
+    <!-- <div *ngIf="checked">
+      <div class="stats-box" *ngIf="isMobile; else fullstatsbox">
+        <img *ngFor="let card of newCard" src="../../assets/tarot/{{ newCard.img }}" />
+      </div>
+  
+      <ng-template #fullstatsbox>
+        <div class="full-stats-box">
+          <img *ngFor="let card of newCard" src="../../assets/tarot/{{ newCard.img }}" />
+        </div>
+      </ng-template>
+    </div> -->
+  
+    <mat-grid-list [cols]="isMobile ? 1 : 2" rowHeight="421px" gutterSize="15px" *ngIf="checked">
+
+        <mat-card class="dashboard-card" color="primary" style="padding: 5px;">
+          <mat-card-header>
+            <mat-card-title class="dashboard-card-title">
+              <h3 class="mat-h3">{{ newCard.title }}</h3>
+            </mat-card-title>
+            <mat-card-subtitle>
+              <h2 class="mat-h2">{{ newCard.tarotName }}</h2>
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <img src="../../assets/tarot{{ newCard.img }}" />
+            <div class="info-box">
+              <h4 class="mat-h4">Description:</h4>
+              {{ newCard.tarotDesc }}
+            </div>
+          </mat-card-content>
+          <mat-card-footer
+            *ngIf="newCard.tarotAstroTitle != '_'"
+            class="zodiac-ticker"
+            style="padding-left: 15px;"
+          >
+            <p class="mat-caption">Card Astrology: {{ newCard.tarotAstroTitle }}</p>
+          </mat-card-footer>
+        </mat-card>
+
+    </mat-grid-list>
+  
+    <!-- @TODO: Implement synchronicity check in some way. -->
+    <!-- <div class="stats-box" *ngIf="isMobile">
+        <p class="mat-h4">Numerologic <br> Synchronicities:</p>
+      </div> -->
+  
+    <div class="spacer"></div>
+  </div>
+  

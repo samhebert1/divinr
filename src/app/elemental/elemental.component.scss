@@ -1,0 +1,184 @@
+@import '~@angular/material/theming';
+@import '../../divinr-theme.scss';
+
+
+
+img.divinr-img {
+  border-radius: 10px;
+
+  background: #ffea00;
+  box-shadow: 10px 10px 20px #b8a800, -10px -10px 20px #ffff00;
+}
+
+.position-descriptions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.reading-description {
+  // padding: 50px;
+  // width: 50%;
+}
+.mobile-position-description {
+  margin: 10px;
+  padding: 15px;
+  border-radius: 23px;
+  background: linear-gradient(145deg, #25a4dd, #2cc3ff);
+  box-shadow: 20px 20px 60px #239bd1, -20px -20px 60px #2fd1ff;
+}
+
+.position-description {
+  margin: 10px;
+  padding: 15px;
+  border-radius: 23px;
+  // background: linear-gradient(145deg, #25a4dd, #2cc3ff);
+  // box-shadow:  20px 20px 60px #239bd1,
+  //              -20px -20px 60px #2fd1ff;
+  width: 500px;
+  height: 140px;
+}
+
+.position-description:hover {
+  // width: 510px;
+  // height: 150px;
+  background: linear-gradient(145deg, #25a4dd, #2cc3ff);
+  box-shadow: 20px 20px 60px #239bd1, -20px -20px 60px #2fd1ff;
+  transform: translateX(-3px);
+  transition: all 0.5s ease;
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.cards-box {
+  display: flex;
+  flex-direction: row;
+  // margin: 10px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  flex-shrink: 2;
+  flex-grow: 2;
+  justify-content: space-evenly;
+}
+
+.stats-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: mat-color($divinr-app-primary, A100);
+  width: 100%;
+  position: relative;
+  // height: 25vmax;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.full-stats-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: mat-color($divinr-app-primary, A400);
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 30px;
+  border: 2px solid mat-color($divinr-app-primary, A400);
+  border-radius: 20px;
+  // width: 50%;
+}
+
+.card-label {
+  display: flex;
+  flex-direction: column;
+}
+.full-stats-box img {
+  width: 20%;
+  height: 85%;
+  margin-top: 20px;
+}
+
+.stats-box img {
+  margin-top: 20px;
+  width: 20%;
+  height: 70%;
+}
+
+.dashboard-card {
+  margin: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 370px;
+  height: 390px;
+  background-color: mat-color($divinr-app-primary);
+  border: 2px solid mat-color($divinr-app-primary);
+  border-radius: 20px;
+}
+
+.dashboard-card-title {
+  font-size: 18px;
+  color: mat-color($divinr-app-accent);
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+img {
+  padding: 1px;
+  margin: 5px;
+  width: 40%;
+  height: 40%;
+  // float: left;
+  box-shadow: 0 0 7px 1px darkslateblue;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Nanum Pen Script', cursive;
+  padding-left: 6px;
+  line-height: 30px;
+}
+
+.zodiac-ticker {
+  margin-left: 5px;
+  // color: mat-color($divinr-app-accent, 600);
+  // position: absolute;
+  // bottom: 5px;
+}
+
+.spacer {
+  height: 5vmax;
+}
+#deal-cards-button {
+  height: 48px;
+  margin-left: 20px;
+}
+@media screen and (max-width: 600px) {
+  .button-row {
+    width: 100%;
+    flex-direction: column;
+  }
+  #deal-cards-button {
+    margin: 0 0 0 0;
+  }
+}

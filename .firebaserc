@@ -1,0 +1,17 @@
+{
+  "targets": {
+    "divinr-418ac": {
+      "hosting": {
+        "DivinR": [
+          "divinr-418ac"
+        ],
+        "divinr": [
+          "Divinr-one"
+        ],
+        "Divinr-one": [
+          "divinr"
+        ]
+      }
+    }
+  }
+}

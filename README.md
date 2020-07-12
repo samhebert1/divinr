@@ -1,27 +1,48 @@
 # Divinr
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
+Current Version: **2.0**
 
-## Development server
+Divinr is a web app that shuffles tarot cards and displays them according to different card spreads.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This project is currently live at:  **[divinr.web.app](https://divinr.web.app).**
 
-## Code scaffolding
+*Sam Hebert 2019. Free for use with attribution.*
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+samhebert1@gmail.com
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Spreads
 
-## Running unit tests
+### Four Point Spread
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+this view lays out four random tarot cards according to a basic four card reflection of the querent's current state. The cards are laid out accordingly:
 
-## Running end-to-end tests
+#### **Fire | Soul/Psyche | ψυχῇ**
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- The querent's identity, the state of the soul at the queried time. this card position describes the current state of the querent's passion, drive, identity, and sense of self. The underlying meaning of this position (in this app) is what Jesus Christ referred to when he said to love God with all your *'soul' (greek: ψυχῇ || 'psyche').*
 
-## Further help
+#### **Air | Thoughts | διανοίᾳ**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- The current state of the querant's thought life. This position is inspired by when Jesus Christ said to love God with all your *'mind' (greek: διανοίᾳ || 'dianoia').*
+  
+#### **Water | Heart | καρδίας**
+
+- the querant's emotions and feelings; The 'heart' or καρδίας. Inspired once again by Jesus' aforementioned command.
+  
+#### **Earth | Physical/Presence | ἰσχύϊ**
+
+- the querant's current immmediate physical and environmental state. This position describes the current interface between the querant and their material environnment. It describes the state of their impact or force upon the earth, and/or the impact of the world on their strength. It is inspired by Christ when he said to love God with all your *'strength' (greek: ἰσχύϊ || 'ischui' ).*
+
+### Twelve House Spread
+
+The twelve house spread uses the astrological houses of the zodiac to describe the intricate domains of the querant's current life. This spread displays 12 cards (one for each house). it includes a brief description of the meaning of each house. The card  is read in context to the residing house in which it is pulled.
+
+## @TODO
+
+- [ ] Fix the border/padding in the four point view so that  `overflow: hidden` is not causing problems with card border.
+- [ ] Add a one card spread option.
+- [ ] Add a five card spread.
+- [ ] Add a overview displaying all pulled cards at a glance for the four-card spread.
+- [ ] Consider adding a footer.
+- [ ] Forgot to add a 'Clear' button to `app.component`.

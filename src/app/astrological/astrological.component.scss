@@ -1,0 +1,70 @@
+@import '~@angular/material/theming';
+@import '../../divinr-theme.scss';
+
+
+img.divinr-img {
+  border-radius: 10px;
+
+  background: #ffea00;
+  box-shadow: 10px 10px 20px #b8a800, -10px -10px 20px #ffff00;
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.panel {
+  background-color: mat-color($divinr-app-primary, A400);
+  margin: 5px;
+}
+
+.desc-text {
+  font-family: 'Nanum Pen Script', cursive;
+  padding-left: 6px;
+  line-height: 30px;
+}
+
+.ruler-img {
+  width: 30px;
+  height: 30px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.tarot-img {
+  width: 150px;
+  height: 50%;
+}
+
+.tarot-text {
+  padding-left: 10px;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 15px;
+}
+#deal-cards-button-12 {
+  height: 48px;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .button-row {
+    // width: 100%;
+    flex-direction: column;
+  }
+  #deal-cards-button-12 {
+    margin: 0;
+  }
+}

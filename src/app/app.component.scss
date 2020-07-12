@@ -1,0 +1,84 @@
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+
+::-webkit-scrollbar:horizontal {
+  height: 12px;
+  background-color: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+
+}
+
+.header {
+  margin-bottom: 10px;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  // position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-top: 10px;
+  margin-top: 0px;
+  padding-left: 10px;
+  // width: 100%;
+}
+
+.footer-text {
+  font-family: 'Nanum Pen Script', cursive;
+  margin: 0;
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 599px) {
+  mat-toolbar-row {
+    height: initial;
+    > a > h1 {
+      margin: 10px 0;
+    }
+  }
+  .grid-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    
+
+
+    > a {
+      margin-right: 5px;
+margin: 5px;
+    
+    }
+  }
+}
