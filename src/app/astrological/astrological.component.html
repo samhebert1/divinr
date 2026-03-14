@@ -58,3 +58,9 @@
     </div>
   </mat-expansion-panel>
 </mat-accordion>
+
+<div class="button-row" *ngIf="checked" style="margin-top: 15px; justify-content: center; margin-bottom: 20px;">
+  <button mat-raised-button color="primary" (click)="exportToLeximancy()">
+    Export to Leximancy
+  </button>
+</div>

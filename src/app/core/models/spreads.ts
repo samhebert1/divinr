@@ -1,4 +1,5 @@
 export interface QuickCard {
+  id?: number;
   title: string;
   img: string;
   tarotName: string;
@@ -8,6 +9,7 @@ export interface QuickCard {
 }
 
 export interface FourCards {
+  id?: number;
   title: string;
   img: string;
   tarotName: string;
@@ -17,6 +19,7 @@ export interface FourCards {
 }
 
 export interface TwelveCards {
+  id?: number;
   house: string;
   houseRuler: string;
   houseDesc: string;

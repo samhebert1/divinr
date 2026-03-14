@@ -50,6 +50,12 @@
         </mat-card>
 
     </mat-grid-list>
+
+    <div class="button-row" *ngIf="checked" style="margin-top: 15px; justify-content: center;">
+      <button mat-raised-button color="primary" (click)="exportToLeximancy()">
+        Export to Leximancy
+      </button>
+    </div>
   
     <!-- @TODO: Implement synchronicity check in some way. -->
     <!-- <div class="stats-box" *ngIf="isMobile">

@@ -8,8 +8,15 @@ import { QuickCard } from './models/spreads';
 export class TarotService {
   checked = false;
   spread: any;
+  originalTarotCards: any[] = [];
 
-  constructor() {}
+  constructor() {
+    // Save original index for each card
+    this.originalTarotCards = [...tarotCards];
+    tarotCards.forEach((card, index) => {
+      card.id = index;
+    });
+  }
 
   shuffle() {
     console.log(tarotCards);
@@ -37,6 +44,7 @@ export class TarotService {
         this.spread[i].tarotAstroTitle = '_';
         this.spread[i].tarotAstroSymbol = '_';
       }
+      this.spread[i].id = tarotCards[i].id;
     }
     this.checked = true;
     return this.spread;
@@ -45,6 +53,7 @@ export class TarotService {
   dealCard(): QuickCard {
     this.shuffle();
     const quickCard = {
+      id: tarotCards[0].id,
       title: '',
       img: tarotCards[0].imgUrl,
       tarotName: tarotCards[0].name,
@@ -53,6 +62,11 @@ export class TarotService {
       tarotAstroSymbol: tarotCards[0].astro.symbol
     };
     return quickCard;
+  }
+
+  getLeximancyUrl(spreadType: string, cards: any[]): string {
+    const cardIds = cards.map(c => c.id).join(',');
+    return `https://leximancy.web.app/experimental?spread=${spreadType}&cards=${cardIds}`;
   }
 
   clear() {

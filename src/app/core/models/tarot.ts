@@ -1,6 +1,7 @@
 import { Zodiac, astro } from './zodiac';
 
 export interface TarotCards {
+  id?: number;
   name: string;
   imgUrl: string;
   description: string;

@@ -27,6 +27,11 @@ export class AstrologicalComponent implements OnInit {
     console.log(this.newTwelve);
   }
 
+  exportToLeximancy() {
+    const url = this.tarotSvc.getLeximancyUrl('as', this.newTwelve);
+    window.open(url, '_blank');
+  }
+
   clear() {
     this.tarotSvc.clear();
     this.checked = false;

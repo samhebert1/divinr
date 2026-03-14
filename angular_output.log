@@ -1,0 +1,89 @@
+
+> divinr@0.0.0 start
+> ng serve
+
+(node:5710) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+Compiling @angular/animations : es2015 as esm2015
+
+Compiling @angular/animations/browser : es2015 as esm2015
+
+Compiling @angular/platform-browser/animations : es2015 as esm2015
+
+Compiling @angular/cdk/keycodes : es2015 as esm2015
+
+Compiling @angular/cdk/observers : es2015 as esm2015
+
+Compiling @angular/cdk/a11y : es2015 as esm2015
+
+Compiling @angular/cdk/bidi : es2015 as esm2015
+
+Compiling @angular/forms : es2015 as esm2015
+
+Compiling @angular/material/core : es2015 as esm2015
+
+Compiling @angular/material/grid-list : es2015 as esm2015
+
+Compiling @angular/material/card : es2015 as esm2015
+
+Compiling @angular/cdk/portal : es2015 as esm2015
+
+Compiling @angular/cdk/collections : es2015 as esm2015
+
+Compiling @angular/cdk/scrolling : es2015 as esm2015
+
+Compiling @angular/cdk/overlay : es2015 as esm2015
+
+Compiling @angular/material/menu : es2015 as esm2015
+
+Compiling @angular/common/http : es2015 as esm2015
+
+Compiling @angular/material/icon : es2015 as esm2015
+
+Compiling @angular/material/button : es2015 as esm2015
+
+Compiling @angular/material/toolbar : es2015 as esm2015
+
+Compiling @angular/cdk/accordion : es2015 as esm2015
+
+Compiling @angular/material/expansion : es2015 as esm2015
+
+Compiling @angular/material/tabs : es2015 as esm2015
+
+Compiling @angular/service-worker : es2015 as esm2015
+
+Compiling @angular/router : es2015 as esm2015
+
+chunk {main} main.js, main.js.map (main) 1.62 MB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 141 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 6.15 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 948 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 4.64 MB [initial] [rendered]
+Date: 2026-03-14T10:29:43.497Z - Hash: 5bc9ea74dc1ccf924586 - Time: 50102ms
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.
+
+Date: 2026-03-14T10:29:44.584Z - Hash: 5bc9ea74dc1ccf924586
+5 unchanged chunks
+
+Time: 732ms
+: Compiled successfully.
+
+Date: 2026-03-14T10:30:20.460Z - Hash: 5fbf7bba6a8475a44d1f
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.62 MB [initial] [rendered]
+Time: 506ms
+: Compiled successfully.
+
+Date: 2026-03-14T10:30:24.172Z - Hash: 466d0598d2b365e0dffc
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.62 MB [initial] [rendered]
+Time: 652ms
+: Compiled successfully.
+
+Date: 2026-03-14T10:30:28.161Z - Hash: a7dd151b683718098fe7
+4 unchanged chunks
+chunk {main} main.js, main.js.map (main) 1.62 MB [initial] [rendered]
+Time: 447ms
+: Compiled successfully.

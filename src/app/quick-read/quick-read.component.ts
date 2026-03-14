@@ -27,6 +27,11 @@ export class QuickReadComponent implements OnInit {
     console.log(this.newCard);
   }
 
+  exportToLeximancy() {
+    const url = this.tarotSvc.getLeximancyUrl('qr', [this.newCard]);
+    window.open(url, '_blank');
+  }
+
   clear() {
     this.tarotSvc.clear();
     this.newCard.tarotAstroTitle = '_';

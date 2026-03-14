@@ -33,6 +33,12 @@ export class ElementalComponent implements OnInit {
     console.log(this.newFour);
   }
 
+  exportToLeximancy() {
+    // newFour is typed as FourCards but it's assigned the result of dealCards, which is an array
+    const url = this.tarotSvc.getLeximancyUrl('er', this.newFour as any);
+    window.open(url, '_blank');
+  }
+
   clear() {
     this.tarotSvc.clear();
     this.newFour.tarotAstroTitle = '_';
