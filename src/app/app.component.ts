@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as build from '../build-version.json';
 
 @Component({
   selector: 'divinr-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'DivinR';
+  title = 'Divinr';
+  // Use .default for Webpack/Angular JSON imports if present
+  buildData: any = (build as any).default || build;
 }

@@ -126,6 +126,12 @@
   .leximancy-btn-icon {
     width: 24px;
     height: 24px;
-    margin-right: 8px;
+    margin: 0 6px;
     vertical-align: middle;
+  }
+
+  .center-action-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }

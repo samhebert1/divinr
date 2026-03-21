@@ -21,3 +21,7 @@
 </mat-toolbar>
 
 <router-outlet></router-outlet>
+
+<footer class="app-footer" style="text-align: center; padding: 20px; color: #555; position: fixed; bottom: 0; width: 100%;">
+  <small>{{ title }} | v{{ buildData.buildVersion }} | Build Date: {{ (buildData.currentIteration * 1000) | date:'medium' }}</small>
+</footer>

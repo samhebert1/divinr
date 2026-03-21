@@ -1,13 +1,19 @@
 <div class="big-box">
-    <div class="button-row">
+    <div class="button-row" style="margin-bottom: 20px;">
       <button *ngIf="!checked" mat-raised-button color="primary" (click)="startReading()">
         Pull Card
       </button>
-      <span class="fill-remaining-space"></span>
-      <button *ngIf="checked" mat-raised-button color="primary" (click)="clear()">
-        <mat-icon>clear_all</mat-icon>
-        Clear
-      </button>
+      <div class="center-action-column" *ngIf="checked">
+        <button mat-raised-button color="primary" (click)="clear()" style="margin-bottom: 10px; width: 100%;">
+          <mat-icon>clear_all</mat-icon>
+          Clear
+        </button>
+        <button mat-raised-button color="primary" (click)="exportToLeximancy()">
+          Export to
+          <img src="assets/icons/leximancy-192.png" alt="Leximancy Icon" class="leximancy-btn-icon" />
+          Leximancy
+        </button>
+      </div>
     </div>
   
     <!-- <div *ngIf="checked">
@@ -51,12 +57,7 @@
 
     </mat-grid-list>
 
-    <div class="button-row" *ngIf="checked" style="margin-top: 15px; justify-content: center;">
-      <button mat-raised-button color="primary" (click)="exportToLeximancy()">
-        <img src="assets/icons/leximancy-192.png" alt="Leximancy Icon" class="leximancy-btn-icon" />
-        Export to Leximancy
-      </button>
-    </div>
+    <!-- Export button relocated to top right -->
   
     <!-- @TODO: Implement synchronicity check in some way. -->
     <!-- <div class="stats-box" *ngIf="isMobile">
